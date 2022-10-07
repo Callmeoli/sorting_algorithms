@@ -16,8 +16,6 @@ void swap(int *x, int *y)
 * quick_sort - sort array using quick sort algo
 * @array: array to be sorted
 * @size: size of the array
-* @low: low first value of array
-* @high: last value of array
 */
 void quick_sort(int *array, size_t size)
 {
