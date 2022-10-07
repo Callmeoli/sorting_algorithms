@@ -45,6 +45,7 @@ void quicksort_recursion(int array[], int low, int high, int size)
  * @high: value2
  * @size: size of array
  * @array: array
+ * Return: the pivote value
  */
 int partition(int *array, int low, int high, size_t size)
 {
