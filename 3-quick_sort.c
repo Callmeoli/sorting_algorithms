@@ -1,6 +1,6 @@
 #include "sort.h"
 void quicksort_recursion(int array[], int low, int high, int size);
-int partition(int array[], int low, int high, int size);
+int partition(int *array, int low, int high, size_t size);
 /**
  * swap - swap values
  * @x: value 1
@@ -46,22 +46,33 @@ void quicksort_recursion(int array[], int low, int high, int size)
  * @size: size of array
  * @array: array
  */
-int partition(int array[], int low, int high, int size)
+int partition(int *array, int low, int high, size_t size)
 {
-	int pivot_value = array[high];
-	int i = low;
-	int j;
-
+	int i = (low - 1);
+	int pivot = array[high];
+	int j, tmp;
 
 	for (j = low; j < high; j++)
 	{
-		if (array[j] <= pivot_value)
+		if (array[j] < pivot)
 		{
-			swap(&array[i], &array[j]);
 			i++;
+			tmp = array[j];
+			array[j] = array[i];
+			array[i] = tmp;
+			if (i != j)
+				print_array(array, size);
 		}
 	}
-swap(&array[i], &array[high]);
-print_array(array, size);
-return (i);
+
+	if (array[i + 1] != array[high])
+	{
+		tmp = array[i + 1];
+		array[i + 1] = array[high];
+		array[high] = tmp;
+		if ((i + 1) != j)
+			print_array(array, size);
+	}
+
+	return (i + 1);
 }
