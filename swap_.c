@@ -5,7 +5,7 @@
  * @b: second variable
  * Return: 1 if swap is not made, 0 if swap is performed
  */
-int swap_(double *array[0],double *array[2])
+int swap_(int *array,int a, int b)
 {
 
     if(*array[0] != *array[0])
