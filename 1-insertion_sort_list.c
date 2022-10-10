@@ -5,10 +5,14 @@
  */
 void insertion_sort_list(listint_t **list)
 {
-	int j, key;
- 	listint_t head;
+	int *key;
+ 	listint_t *head;
+ 	listint_t *j;
+ 	head = *list;
+ 	j = *list;
 
-	for(head = *list->next; head->next != NULL; head = head->next)
+
+	for(head = head->next; head != NULL; head = head->next)
 	{
 		key = head->n; 
 		j = head->prev;
@@ -16,9 +20,9 @@ void insertion_sort_list(listint_t **list)
 
 		while(j != NULL && j->n > key)
 		{
-			head->n = j; 
+			j->next = j; 
 			j = j->prev;
 		}
-		head->n = key;
+		j->next = head;
 	}
 }
