@@ -21,6 +21,6 @@ void insertion_sort_list(listint_t **list)
 			j = j->prev;
 		}
 		head->n = key;
-		head = head->next
+		head = head->next;
 	}
 }
