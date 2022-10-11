@@ -13,7 +13,7 @@ void swap(int *x, int *y)
 	*y = temp;
 }
 /**
-* quick_sort - sort array using quick sort algo
+* quick_sort - sort array using quick sort algorithim
 * @array: array to be sorted
 * @size: size of the array
 */
