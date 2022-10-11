@@ -18,6 +18,7 @@ void insertion_sort_list(listint_t **list)
 			*p= (int)head->n;
 			p = (int *)&(head->n);
 			*p = tmp;
+			print_list(*list);
 		}
 		j = head;
 		while(j->prev != NULL)
@@ -29,6 +30,7 @@ void insertion_sort_list(listint_t **list)
 				*p =(int)j->prev->n;
 				p = (int *)&(j->prev->n);
 				*p = tmp;
+				print_list(*list);
 			}
 			j = j->prev;
 		}
